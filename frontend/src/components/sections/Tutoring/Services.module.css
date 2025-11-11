@@ -1,0 +1,57 @@
+/* src/components/sections/Tutoring/Services.module.css */
+
+/* Hover effect per desktop */
+@media (min-width: 1024px) {
+  .serviceCard {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  .serviceCard:hover {
+    transform: translateY(-30px) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  }
+
+  .serviceCard:hover * {
+    cursor: pointer;
+  }
+}
+
+/* Modal animation */
+.serviceModal :global(.modal-content) {
+  animation: modalFadeIn 0.3s ease-in-out;
+  border-radius: 15px;
+  border: none;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Backdrop animation */
+.serviceModal :global(.modal-backdrop) {
+  animation: backdropFadeIn 0.3s ease-in-out;
+}
+
+@keyframes backdropFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+/* Mobile - nessun effetto hover */
+@media (max-width: 1023px) {
+  .serviceCard {
+    cursor: default;
+  }
+}
